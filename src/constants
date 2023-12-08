@@ -1,0 +1,6 @@
+export const label_And_Color = {
+  'Classic' : ["vodkaBlack_label",'#000000'],
+  'Coconut & pineApple': ["vodkaBlue_label",'#87CEEB'],
+  'Grape': ["vodkaPurple_label",'#C8A2C8'],
+  'Cranberry': ["vodkaRed_label", '#ff0000'],
+}
