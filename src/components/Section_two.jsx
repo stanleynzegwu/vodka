@@ -1,6 +1,6 @@
 const Section_two = () => {
   return (
-    <div className="h-screen w-full" id="section_two">
+    <div className="section_two h-screen w-full" id="section_two">
       section two
     </div>
   );

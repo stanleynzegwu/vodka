@@ -1,8 +1,14 @@
+import { useThree } from "@react-three/fiber";
 import useStore from "../store/useStore";
+import { animateToVodkaCan } from "../utils";
 import VodkaVariant_Picker from "./VodkaVariant_picker";
 
 const Section_one = () => {
   const updateVodka_variant = useStore((state) => state.updateVodka_variant);
+
+  //////////
+  const canModel = useStore((state) => state.canModel);
+
   return (
     <div className="relative h-screen w-full" id="section_one">
       section one
@@ -21,7 +27,10 @@ const Section_one = () => {
                 alt=""
                 className="h-16 w-auto cursor-pointer z-20"
                 key={index}
-                onClick={() => updateVodka_variant(variant)}
+                onClick={() => {
+                  animateToVodkaCan(canModel);
+                  updateVodka_variant(variant);
+                }}
               />
             ))}
           </div>
