@@ -1,7 +1,7 @@
 import { useThree } from "@react-three/fiber";
 import useStore from "../store/useStore";
 import { animateToVodkaCan } from "../utils";
-import VodkaVariant_Picker from "./VodkaVariant_picker";
+import { VodkaVariant_picker } from ".";
 
 const Section_one = () => {
   const updateVodka_variant = useStore((state) => state.updateVodka_variant);
@@ -12,8 +12,8 @@ const Section_one = () => {
   return (
     <div className="relative h-screen w-full" id="section_one">
       section one
-      {/* <VodkaVariant_Picker /> */}
-      <div className="absolute bottom-0 right-10 bg-blue-200 max-w-10 rounded-t-lg">
+      {/* <VodkaVariant_picker /> */}
+      <div className="vodkaVariant_picker fixed bottom-0 right-10 bg-blue-200 max-w-10 rounded-t-lg z-20">
         <div className="relative w-full h-full">
           <div className=" top-0 right-0 w-full flex ">
             {[

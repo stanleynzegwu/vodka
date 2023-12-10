@@ -6,6 +6,7 @@ import { LoadTextures } from "../utils";
 import useStore from "../store/useStore";
 import { label_And_Color } from "../constants";
 import { useFrame, useThree } from "@react-three/fiber";
+import { useControls } from "leva";
 
 export function CanModel(props) {
   const { nodes, materials } = useGLTF("/models/can.glb");
@@ -24,10 +25,21 @@ export function CanModel(props) {
   useLayoutEffect(() => {
     new ScrollTrigger({});
     // component About.tsx
-    tl.to(camera.position, {
-      x: 5,
-      y: 4.0,
-      z: 2.8,
+    tl.to(groupRef.current.position, {
+      x: 1.7,
+      y: 0.45,
+      z: -0.45,
+      scrollTrigger: {
+        trigger: ".section_two",
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        immediateRender: false,
+      },
+    }).to(groupRef.current.rotation, {
+      x: -0.84,
+      y: 1,
+      z: -0.76,
       scrollTrigger: {
         trigger: ".section_two",
         start: "top bottom",
@@ -36,18 +48,6 @@ export function CanModel(props) {
         immediateRender: false,
       },
     });
-    // .to(scene.position, {
-    // 	x: 3.01,
-    // 	y: 0.76,
-    // 	z: 3.7,
-    // 	scrollTrigger: {
-    // 		trigger: ".second-section",
-    // 		start: "top bottom",
-    // 		end: "top top",
-    // 		scrub: true,
-    // 		immediateRender: false,
-    // 	},
-    // })
 
     // .to(scene.rotation, {
     // 	x: -0.53,
@@ -107,12 +107,41 @@ export function CanModel(props) {
   ///////////
   const update_canModel = useStore((state) => state.update_canModel);
 
+  const { position, rotation } = useControls({
+    position: {
+      value: { x: 0, y: 0.5, z: 0 },
+      step: 0.05,
+    },
+    rotation: {
+      min: -Math.PI * 2,
+      max: Math.PI * 2,
+      value: { x: 0, y: 0, z: 0 },
+      step: 0.04,
+    },
+  });
+
+  // useFrame((state, delta) => {
+  //   state.camera.rotation.x = rotation.x;
+  //   state.camera.rotation.y = rotation.y;
+  //   state.camera.rotation.z = rotation.z;
+
+  //   state.camera.position.x = position.x;
+  //   state.camera.position.y = position.y;
+  //   state.camera.position.z = position.z;
+  // });
+
   useEffect(() => {
     update_canModel(groupRef.current);
   }, []);
 
   return (
-    <group ref={groupRef} {...props} dispose={null}>
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      // position={[position.x, position.y, position.z]}
+      // rotation={[rotation.x, rotation.y, rotation.z]}
+    >
       <mesh
         name="others"
         geometry={nodes.others.geometry}
