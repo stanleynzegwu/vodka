@@ -9,7 +9,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useControls } from "leva";
 
 export function CanModel(props) {
-  const { nodes, materials } = useGLTF("/models/can.glb");
+  const { nodes, materials } = useGLTF("/models/can2.glb");
   const groupRef = useRef();
   const vodka_variant = useStore((state) => state.vodka_variant);
   const textures = LoadTextures([
@@ -181,4 +181,4 @@ export function CanModel(props) {
   );
 }
 
-useGLTF.preload("/models/can.glb");
+useGLTF.preload("/models/can2.glb");

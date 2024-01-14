@@ -16,7 +16,8 @@ export const LoadTextures = (imagePaths) => {
     return textures;
 };
 
-export const animateToVodkaCan = (model) => {
+export const animateToVodkaCan = (model,glassColor,bottleNeckColor) => {
+  const page = document.getElementById("section_one");
   // controls.enabled = false;
   const timeline = gsap.timeline();
 
@@ -24,7 +25,26 @@ export const animateToVodkaCan = (model) => {
     y: model.rotation.y + Math.PI * 2,
     duration: 0.5,
     ease: "linear",
-  });
+  },'same')
+    .to(model?.getObjectByName("bottle_other").material, {
+    color: glassColor,
+    duration: 0,
+    ease: "linear",
+  },'same')
+    .to(model?.getObjectByName("bottle_cork").material, {
+    color: bottleNeckColor,
+    duration: 0,
+    ease: "linear",
+  },'same')
+
+  //////// for background change
+  // .to(page, {
+  //   background: background,
+  //   duration: 1,
+  //   ease: "linear",
+  // })
+
+  ///////////
   // timeline.to(
   //   {},
   //   {

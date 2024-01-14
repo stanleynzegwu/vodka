@@ -14,7 +14,6 @@ function App() {
   gsap.registerPlugin(ScrollTrigger);
   useLayoutEffect(() => {
     new ScrollTrigger({});
-    // component About.tsx
     tl.to(vodkaVariant_pickerRef.current, {
       bottom: -70,
       scrollTrigger: {
@@ -29,7 +28,7 @@ function App() {
 
   return (
     <div className="main">
-      <div className="h-screen w-full fixed top-0 z-10 hidden lg:block">
+      <div className="h-screen w-full fixed top-0 z-10 block">
         <Experience />
       </div>
       <Navbar />
