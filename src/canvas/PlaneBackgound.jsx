@@ -26,9 +26,11 @@ const PlaneBackgound = () => {
   // });
 
   return (
+    // <group position-z={-2}>
     <Plane args={[viewport.width, viewport.height]}>
       <planeShaderMaterial ref={planeShaderMaterialRef} />
     </Plane>
+    // </group>
   );
 };
 

@@ -21,11 +21,25 @@ export const animateToVodkaCan = (model,glassColor,bottleNeckColor) => {
   // controls.enabled = false;
   const timeline = gsap.timeline();
 
-  timeline.to(model.rotation, {
-    y: model.rotation.y + Math.PI * 2,
+  timeline
+  //rotation
+  .to(model.rotation, {
+    y: model.rotation.y + Math.PI * 4,
+    duration: 1,
+    ease: "easeIn",
+  },'same')
+  //slightly move the position then return back
+    .to(model.position, {
+    x: model.position.x - 0.05,
     duration: 0.5,
     ease: "linear",
   },'same')
+    .to(model.position, {
+    x: model.position.x + 0.05,
+    duration: 0.5,
+    ease: "linear",
+  },)
+  //
     .to(model?.getObjectByName("bottle_other").material, {
     color: glassColor,
     duration: 0,

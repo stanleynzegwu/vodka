@@ -3,7 +3,7 @@ import { subscribeWithSelector } from 'zustand/middleware'
 
 // define the initial state
 const initialState = {
-    vodka_variant: 'Coconut & pineApple',
+    vodka_variant: 'Classic',
     canModel:null
 }
 

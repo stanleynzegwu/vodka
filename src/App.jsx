@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Experience from "./canvas/Experience";
 import { Navbar, Section_four, Section_one, Section_three, Section_two } from "./components";
-import { useLayoutEffect, useRef } from "react";
+import { Suspense, useLayoutEffect, useRef } from "react";
 
 function App() {
   const vodkaVariant_pickerRef = useRef();
@@ -29,7 +29,9 @@ function App() {
   return (
     <div className="main">
       <div className="h-screen w-full fixed top-0 z-10 block">
-        <Experience />
+        <Suspense fallback={null}>
+          <Experience />
+        </Suspense>
       </div>
       <Navbar />
       <Section_one />
