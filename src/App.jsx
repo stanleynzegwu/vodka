@@ -15,20 +15,21 @@ function App() {
   useLayoutEffect(() => {
     new ScrollTrigger({});
     tl.to(vodkaVariant_pickerRef.current, {
-      bottom: -70,
+      bottom: -110,
       scrollTrigger: {
-        trigger: ".section_two",
-        start: "top bottom",
-        end: "top top",
+        trigger: "#section_one",
+        start: "top top",
+        end: "center center",
         scrub: true,
         immediateRender: false,
+        // markers: true,
       },
     });
   }, []);
 
   return (
     <div className="main">
-      <div className="h-screen w-full fixed top-0 z-10 block">
+      <div className="h-screen w-full fixed top-0 z-10">
         <Suspense fallback={null}>
           <Experience />
         </Suspense>

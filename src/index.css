@@ -43,3 +43,25 @@ body, */
 /* #section_one {
   background: linear-gradient(180deg, #cf17cf 0%, #ffffff 100%)
 } */
+.vodkaPicker-transition {
+  transition: height 0.5s ease;
+}
+
+.smooth-transition {
+  transition: flex 0.5s ease;
+}
+
+.floatingSvg_animation {
+  animation: floatAnimation 5s infinite alternate; /* Adjust duration and animation type as needed */
+}
+
+@keyframes floatAnimation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-20px); /* Adjust the floating distance as needed */
+  }
+}
+

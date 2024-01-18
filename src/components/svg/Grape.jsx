@@ -1,6 +1,6 @@
 const Grape = () => {
   const marginLeft = window.innerWidth / 2 - 250 + "px";
-  console.log(marginLeft);
+  // console.log(marginLeft);
   return (
     <svg
       viewBox="0 0 1024 1024"
@@ -10,7 +10,7 @@ const Grape = () => {
       fill="#4B0082"
       stroke="#4B0082"
       transform="matrix(-1, 0, 0, 1, 0, 0)"
-      className={`w-40 h-40`}
+      className={`floatingSvg_animation w-40 h-40`}
       style={{ marginLeft: marginLeft }}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

@@ -4,3 +4,49 @@ export const label_And_Color = {
   'Grape': ["vodkaPurple_label",'#C8A2C8'],
   'Cranberry': ["vodkaRed_label", '#ff0000'],
 }
+
+export const wineData = [
+  {
+    imagePath: "./images/wineBottle.png",
+    variant:"Classic",
+    glassColor:{ r: 0.05, g: 0.0, b: 0.0 },
+    bottleNeckColor:{ r: 0.6, g: 0.0, b: 0.0 },
+    desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
+    backgroundColor: '#bd9f63'
+  },
+  {
+    imagePath:"./images/wineBottle.png",
+    variant:"Cranberry",
+    glassColor:{ r: 0.6, g: 0.5, b: 0.2 },
+    bottleNeckColor:{ r: 0.6, g: 0.0, b: 0.0 },
+    desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
+    backgroundColor: '#5eafd8'
+  },
+  {
+    imagePath:"./images/wineBottle.png",
+    variant:"Coconut & pineApple",
+    glassColor:{ r: 0.4, g: 0.0, b: 0.0 },
+    bottleNeckColor:{ r: 1.0, g: 1.0, b: 1.0 },
+    desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
+    backgroundColor: '#de6abb'
+  },
+  {
+    imagePath:"./images/wineBottle.png",
+    variant:"Grape",
+    glassColor:{ r: 0.4, g: 0.2, b: 0.2 },
+    bottleNeckColor:{ r: 0.0, g: 0.0, b: 0.0 },
+    desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
+    backgroundColor: '#bcb4ba'
+  },
+]
+
+export const pp = [
+  {
+    imagePath: "./images/wineBottle.png",
+    variant:"Classic",
+    glassColor:{ r: 0.05, g: 0.0, b: 0.0 },
+    bottleNeckColor:{ r: 0.6, g: 0.0, b: 0.0 },
+    desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
+    backgroundColor: '#bd9f63'
+  },
+]
