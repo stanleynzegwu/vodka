@@ -23,13 +23,13 @@ const Section_one = () => {
           <PlaneBackgound />
         </Scene>
       </div>
-      <div className="absolute w-full h-full top-0 left-0">
+      {/* <div className="absolute w-full h-full top-0 left-0">
         <Grape />
         <Strawberry />
-      </div>
+      </div> */}
       section one
       {/* <VodkaVariant_picker /> */}
-      <div className="vodkaVariant_picker fixed bottom-0 right-10 bg-blue-200 w-[250px] max-w-10 rounded-t-3xl z-20">
+      <div className="vodkaVariant_picker fixed max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2 bottom-0 right-10 bg-blue-200 w-[250px] max-w-10 rounded-t-3xl z-20">
         <div className="relative w-full h-20 rounded-t-3xl">
           <div
             className={`absolute top-[-30px] left-0 bg-transparent w-full h-28 flex justify-between items-center`}

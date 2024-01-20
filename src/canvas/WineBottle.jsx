@@ -22,44 +22,14 @@ export function WineBottle(props) {
   ]);
   const { scene, camera } = useThree();
   const tl = gsap.timeline();
-  // gsap.registerPlugin(ScrollTrigger);
-  // useLayoutEffect(() => {
-  //   new ScrollTrigger({});
-  //   // component About.tsx
-  //   tl.to(groupRef.current.position, {
-  //     x: 1.7,
-  //     y: 0.45,
-  //     z: -0.45,
-  //     scrollTrigger: {
-  //       trigger: ".section_two",
-  //       start: "top bottom",
-  //       end: "top top",
-  //       scrub: true,
-  //       immediateRender: false,
-  //     },
-  //   }).to(groupRef.current.rotation, {
-  //     x: -0.84,
-  //     y: 1,
-  //     z: -0.76,
-  //     scrollTrigger: {
-  //       trigger: ".section_two",
-  //       start: "top bottom",
-  //       end: "top top",
-  //       scrub: true,
-  //       immediateRender: false,
-  //     },
-  //   });
-  // }, []);
   gsap.registerPlugin(ScrollTrigger);
   useLayoutEffect(() => {
     new ScrollTrigger({});
     // component About.tsx
     tl.to(groupRef.current.position, {
-      // x: 1.7,
       y: -0.1,
-      // z: -0.45,
       scrollTrigger: {
-        trigger: ".section_one",
+        trigger: "#section_one",
         start: "top top",
         end: "center bottom",
         scrub: true,
@@ -67,11 +37,9 @@ export function WineBottle(props) {
       },
     })
       .to(groupRef.current.rotation, {
-        // x: -0.84,
         y: Math.PI * 2,
-        // z: -0.76,
         scrollTrigger: {
-          trigger: ".section_one",
+          trigger: "#section_one",
           start: "top top",
           end: "center center",
           scrub: true,
@@ -79,41 +47,16 @@ export function WineBottle(props) {
         },
       })
       .to(groupRef.current.rotation, {
-        x: -1,
-        // y: 1,
+        x: -0.5,
         z: -1,
         scrollTrigger: {
-          trigger: ".section_two",
-          start: "top center",
-          end: "top top",
+          trigger: "#section_one",
+          start: "center center",
+          end: "bottom center",
           scrub: true,
           immediateRender: false,
         },
       });
-    // .to(groupRef.current.rotation, {
-    //   x: -0.84,
-    //   y: 1,
-    //   z: -0.76,
-    //   scrollTrigger: {
-    //     trigger: ".section_two",
-    //     start: "top bottom",
-    //     end: "top top",
-    //     scrub: true,
-    //     immediateRender: false,
-    //   },
-    // });
-    // .to(groupRef.current.rotation, {
-    //   x: -0.84,
-    //   y: 1,
-    //   z: -0.76,
-    //   scrollTrigger: {
-    //     trigger: ".section_two",
-    //     start: "top bottom",
-    //     end: "top top",
-    //     scrub: true,
-    //     immediateRender: false,
-    //   },
-    // });
   }, []);
 
   const [label, _] = label_And_Color[vodka_variant];
