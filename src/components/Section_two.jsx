@@ -8,10 +8,10 @@ const Section_two = () => {
   const canModel = useStore((state) => state.canModel);
   return (
     <div
-      className="section_two relative flex justify-center lg:h-screen w-full z-20 bg-gray-200"
+      className="section_two relative max-md:px-4 flex justify-center lg:h-screen w-full z-20 bg-white"
       id="section_two"
     >
-      <div className="rounded-lg flex flex-col max-lg:gap-8 max-lg:justify-between lg:flex-row lg:gap-0 lg:h-[75%] lg:w-[95%]">
+      <div className="rounded-lg flex flex-col max-lg:gap-20 max-lg:justify-between lg:flex-row lg:gap-0 lg:h-[75%] lg:w-[95%] ">
         {wineData.map(
           ({ imagePath, variant, glassColor, bottleNeckColor, desc, backgroundColor }, index) => (
             <div
@@ -32,7 +32,7 @@ const Section_two = () => {
                 // className={`flex justify-center items-center ${
                 //   vodka_variant === variant ? "" : "w-full"
                 // }`}
-                className={`absolute lg:static h-32 lg:h-full right-0 bottom-[-40px] lg:flex lg:justify-center lg:items-center ${
+                className={`absolute lg:static h-52 lg:h-full right-[-10px] bottom-[-52px] lg:flex lg:justify-center lg:items-center ${
                   vodka_variant === variant ? "" : "lg:w-full"
                 }`}
               >
