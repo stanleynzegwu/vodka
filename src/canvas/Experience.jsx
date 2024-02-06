@@ -4,20 +4,19 @@ import {
   Environment,
   OrbitControls,
   Preload,
-  Scroll,
-  ScrollControls,
   useProgress,
   useTexture,
 } from "@react-three/drei";
-import { CanModel } from "./CanModel";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import CameraRig from "./CameraRig";
-import PlaneBackgound from "./PlaneBackgound";
 import { WineBottle } from "./WineBottle";
 import { useMemo } from "react";
 
 const Experience = () => {
   // const progress = useProgress((state) => state.progress);
+
+  // const { x: mouseX, y: mouseY } = useThree((state) => state.mouse);
+  // console.log(mouseX);
   return (
     <Canvas
       shadows
@@ -28,14 +27,17 @@ const Experience = () => {
         // position: [0, 0, 5],
       }}
     >
-      <OrbitControls enableDamping={false} enabled={false} />
+      {/* <OrbitControls
+        makeDefault
+        enableDamping={false}
+        enabled={false}
+      /> */}
       <ambientLight intensity={1} color={"#babad1"} />
-      <directionalLight position={[1, 2, 0]} intensity={2} />
+      {/* <directionalLight position={[1, 2, 0]} intensity={2} /> */}
       <Environment files="/textures/city.hdr" />
-      {/* <PlaneBackgound /> */}
+
       <Center>
         <CameraRig>
-          {/* <CanModel /> */}
           <WineBottle />
         </CameraRig>
       </Center>

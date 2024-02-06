@@ -4,7 +4,8 @@ import { subscribeWithSelector } from 'zustand/middleware'
 // define the initial state
 const initialState = {
     vodka_variant: 'Classic',
-    canModel:null
+    canModel:null,
+    controls:null
 }
 
 export default create(subscribeWithSelector((set) => {
@@ -23,6 +24,14 @@ export default create(subscribeWithSelector((set) => {
                 {
                    return {
                     canModel: model
+                   }
+                })
+            },
+            update_controls : (controls) => {
+                set(() =>
+                {
+                   return {
+                    controls
                    }
                 })
             },

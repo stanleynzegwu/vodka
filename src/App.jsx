@@ -37,7 +37,7 @@ function App() {
       <Navbar />
       <Section_one />
       <Section_two />
-      <Section_three />
+      {/* <Section_three /> */}
       <Section_four />
     </div>
   );

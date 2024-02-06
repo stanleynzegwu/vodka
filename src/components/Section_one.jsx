@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import { Center, Environment, Preload } from "@react-three/drei";
 import useStore from "../store/useStore";
 import { animateToVodkaCan } from "../utils";
@@ -16,9 +16,10 @@ const Section_one = () => {
   //////////
   const canModel = useStore((state) => state.canModel);
   // console.log(canModel?.getObjectByName("bottle_other").material.color);
+  // const apparelSelected = useMemo(() => apparelConfig.find((item) => item.name === apparelType), [canModel]);
   return (
     <div className="relative h-[200vh] w-full" id="section_one">
-      <div className="relative h-[100vh] w-full">
+      <div className="relative h-[100vh] w-full " id="planeDiv">
         <Scene>
           <PlaneBackgound />
         </Scene>
@@ -80,9 +81,6 @@ export default Section_one;
 export const Scene = ({ children }) => {
   return (
     <Canvas>
-      <ambientLight intensity={1.5} color={"#babad1"} />
-      <directionalLight position={[1, 2, 0]} intensity={2} />
-      <Environment files="/textures/city.hdr" />
       <Center>{children}</Center>
       <Preload all />
     </Canvas>
