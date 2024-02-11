@@ -40,6 +40,30 @@ export const wineData = [
   },
 ]
 
+export const FAQ = [
+  {
+    question:'can i use wine as a pre-workout?',
+    answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
+  },
+  {
+    question:'can i use wine as a pre-workout?',
+    answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
+  },
+  {
+    question:'can i use wine as a pre-workout?',
+    answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
+  },
+  {
+    question:'can i use wine as a pre-workout?',
+    answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
+  },
+  {
+    question:'can i use wine as a pre-workout?',
+    answer:`you can use this as a preworkout but make sure everythings is shakedproperly you can use this as a preworkout 
+    but make sure everythings is shakedproperly you can use this as a preworkout but make sure everythings is shakedproperly`
+  },
+]
+
 export const pp = [
   {
     imagePath: "./images/wineBottle.png",
