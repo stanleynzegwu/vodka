@@ -4,15 +4,15 @@ import { FAQ } from "../constants";
 const Section_four = () => {
   const [expanded, setExpanded] = useState([]);
 
-  function handleExpansion(index) {
+  const handleExpansion = (index) => {
     expanded.includes(index)
       ? setExpanded(expanded.filter((val) => val !== index))
       : setExpanded(expanded.concat(index));
-  }
+  };
 
   return (
-    <div className=" relative px-4 md:px-8 mt-8 h-screen w-full z-20 bg-white" id="section_four">
-      <span className="block uppercase text-lg font-bold">faq</span>
+    <div className=" relative px-4 md:px-8 my-8 w-full z-20 bg-white" id="section_four">
+      <span className="block uppercase text-lg font-bold mb-4 md:mb-6">faq</span>
       <div className="flex flex-col gap-4">
         {FAQ.map(({ question, answer }, index) => (
           <div
