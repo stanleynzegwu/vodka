@@ -4,7 +4,6 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { Center, Environment, Preload } from "@react-three/drei";
 import useStore from "../store/useStore";
 import { animateToVodkaCan } from "../utils";
-import { VodkaVariant_picker } from ".";
 import PlaneBackgound from "../canvas/PlaneBackgound";
 import { wineData } from "../constants";
 import { Grape, Strawberry } from "./svg";
