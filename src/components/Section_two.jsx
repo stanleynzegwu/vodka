@@ -8,7 +8,7 @@ const Section_two = () => {
   const canModel = useStore((state) => state.canModel);
   return (
     <div
-      className="section_two relative max-md:px-4 flex justify-center lg:h-screen w-full z-20 bg-white"
+      className="section_two relative max-md:px-4 max-lg:pb-10 flex justify-center lg:h-screen w-full z-20 bg-white"
       id="section_two"
     >
       <div className="rounded-lg flex flex-col max-lg:gap-20 max-lg:justify-between lg:flex-row lg:gap-0 lg:h-[75%] lg:w-[95%] ">

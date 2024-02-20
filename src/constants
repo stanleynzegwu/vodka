@@ -46,11 +46,11 @@ export const FAQ = [
     answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
   },
   {
-    question:'can i use wine as a pre-workout?',
+    question:'Does this flavored wine acts as a mood booster?',
     answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
   },
   {
-    question:'can i use wine as a pre-workout?',
+    question:'Can pregnant women or nursing mothers take this ?',
     answer:'you can use this as a preworkout but make sure everythings is shakedproperly'
   },
   {
