@@ -1,7 +1,14 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Experience from "./canvas/Experience";
-import { Navbar, Section_four, Section_one, Section_three, Section_two } from "./components";
+import {
+  Footer,
+  Navbar,
+  Section_four,
+  Section_one,
+  Section_three,
+  Section_two,
+} from "./components";
 import { Suspense, useLayoutEffect, useRef } from "react";
 
 function App() {
@@ -39,6 +46,7 @@ function App() {
       <Section_two />
       {/* <Section_three /> */}
       <Section_four />
+      <Footer />
     </div>
   );
 }

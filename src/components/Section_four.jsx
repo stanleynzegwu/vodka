@@ -11,7 +11,7 @@ const Section_four = () => {
   };
 
   return (
-    <div className="relative px-4 md:px-8 w-full z-20 bg-white" id="section_four">
+    <div className="relative px-4 md:px-8 w-full pb-6 z-20 bg-white" id="section_four">
       <span className="block uppercase text-lg font-bold mb-4 md:mb-6">faq</span>
       <div className="flex flex-col gap-4">
         {FAQ.map(({ question, answer }, index) => (

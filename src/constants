@@ -64,6 +64,12 @@ export const FAQ = [
   },
 ]
 
+export const FOOTER_CONTENT = [
+  { title: "Our range", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
+  { title: "about us", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
+  { title: "support", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
+]
+
 export const pp = [
   {
     imagePath: "./images/wineBottle.png",

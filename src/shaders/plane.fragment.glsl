@@ -16,9 +16,13 @@ void main() {
     // float y = 1.0 - vUv.y ;
     // vec3 colorGradient = vec3(y, 0.0, y);
     // gl_FragColor = vec4(colorGradient, 1.0);
+    
 
-
-    gl_FragColor = vec4(vec3(smoothstep(-1.0,2.0,1.0 - vUv.y),0.0,smoothstep(-1.0,2.0,1.0 - vUv.y)), 1.0);
+    //remap uv to now go from 0.4 => 1.0
+    float newUv = mix(0.4, 1.0, vUv.y);
+    gl_FragColor = vec4(0.5,0.0, 0.0, newUv);
+    #include <tonemapping_fragment>
+    #include <colorspace_fragment>
 }
 
 // Fragment Shader

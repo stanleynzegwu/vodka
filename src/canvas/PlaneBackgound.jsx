@@ -9,7 +9,7 @@ const PlaneBackgound = () => {
   const planeShaderMaterialRef = useRef();
   const { viewport } = useThree();
   const PlaneShaderMaterial = shaderMaterial(
-    { uCursor: new THREE.Vector2(0, 0), time: 0, color: new THREE.Color(0.2, 0.0, 0.1) },
+    { uCursor: new THREE.Vector2(0, 0), time: 0, color: new THREE.Color(0.2, 1.0, 0.0) },
     vertexShader,
     fragmentShader
   );
