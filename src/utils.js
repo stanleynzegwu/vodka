@@ -50,42 +50,19 @@ export const animateToVodkaCan = (model,glassColor,bottleNeckColor) => {
     duration: 0,
     ease: "linear",
   },'same')
-
-  //////// for background change
-  // .to(page, {
-  //   background: background,
-  //   duration: 1,
-  //   ease: "linear",
-  // })
-
-  ///////////
-  // timeline.to(
-  //   {},
-  //   {
-  //     onUpdate: () => {
-  //       camera.lookAt(artPosition);
-  //     },
-  //   }
-  // );
 };
 
-// export const clip_Animation = (camera,isMobile) => {
-//   const timeline = gsap.timeline();
-//   timeline
-
-//   .to(camera.rotation, {
-//     x: -2.40,
-//     y: 0.87,
-//     z: 2.44,
-//     duration: 1,
-//     ease: "power1.inOut"
-//   })
-//   .to(camera.position, {
-//     x: isMobile ? 17 : 11,
-//     y: isMobile ? 17 : 13,
-//     z: isMobile ? -17.5 : -23.5,
-//     duration: 1,
-//     ease: "power1.inOut"
-//   })
-
-// };
+export const animateProgression = (propertyToAnimate, update_isLerpProgress) => {
+    gsap.timeline().fromTo(
+      propertyToAnimate,
+      { value: 0 }, // Initial value
+      {
+        value: 1, // Target value
+        duration: .5,
+        ease: "power1.inOut",
+        onComplete: () => {
+          update_isLerpProgress(false)
+        }
+      }
+    )
+};

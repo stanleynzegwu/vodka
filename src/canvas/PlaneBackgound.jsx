@@ -4,12 +4,25 @@ import { useThree, extend, useFrame } from "@react-three/fiber";
 import vertexShader from "../shaders/plane.vertex.glsl";
 import fragmentShader from "../shaders/plane.fragment.glsl";
 import { useEffect, useMemo, useRef } from "react";
+import useStore from "../store/useStore";
+import { animateProgression } from "../utils";
 
 const PlaneBackgound = () => {
   const planeShaderMaterialRef = useRef();
   const { viewport } = useThree();
+  const bgColor = useStore((state) => state.bgColor);
+  const newBgColor = useStore((state) => state.newBgColor);
+  const isLerpProgress = useStore((state) => state.isLerpProgress);
+  const update_isLerpProgress = useStore((state) => state.update_isLerpProgress);
+
   const PlaneShaderMaterial = shaderMaterial(
-    { uCursor: new THREE.Vector2(0, 0), time: 0, color: new THREE.Color(0.2, 1.0, 0.0) },
+    {
+      uCursor: new THREE.Vector2(0, 0),
+      time: 0,
+      color: new THREE.Color(bgColor.r, bgColor.g, bgColor.b),
+      colorB: new THREE.Color(newBgColor.r, newBgColor.g, newBgColor.b),
+      uProgression: 0,
+    },
     vertexShader,
     fragmentShader
   );
@@ -29,12 +42,19 @@ const PlaneBackgound = () => {
     planeShaderMaterialRef.current.uniforms.uCursor.value.y = event.clientY / window.innerHeight;
   });
 
-  // useFrame((state, delta) => {
-  //   console.log(planeShaderMaterialRef.current.uniforms.uCursor.value.x);
-  //   planeShaderMaterialRef.current.uniforms.color.value.b =
-  //     Math.sin(state.clock.elapsedTime) * 0.25;
-  //   planeShaderMaterialRef.current.uniforms.time.value = state.clock.elapsedTime;
-  // });
+  useEffect(() => {
+    if (isLerpProgress) {
+      animateProgression(
+        planeShaderMaterialRef.current.uniforms.uProgression,
+        update_isLerpProgress
+      );
+    }
+  }, [isLerpProgress]);
+
+  useFrame(() => {
+    planeShaderMaterialRef.current.uniforms.color.value = bgColor;
+    planeShaderMaterialRef.current.uniforms.colorB.value = newBgColor;
+  });
 
   return (
     <Plane args={[viewport.width, viewport.height]}>

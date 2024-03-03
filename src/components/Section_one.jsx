@@ -11,6 +11,10 @@ import { Grape, Strawberry } from "./svg";
 const Section_one = () => {
   const vodka_variant = useStore((state) => state.vodka_variant);
   const updateVodka_variant = useStore((state) => state.updateVodka_variant);
+  const update_bgColor = useStore((state) => state.update_bgColor);
+  const newBgColor = useStore((state) => state.newBgColor);
+  const update_newBgColor = useStore((state) => state.update_newBgColor);
+  const update_isLerpProgress = useStore((state) => state.update_isLerpProgress);
 
   //////////
   const canModel = useStore((state) => state.canModel);
@@ -51,23 +55,28 @@ const Section_one = () => {
           <div
             className={`absolute top-[-30px] left-0 bg-transparent w-full h-28 flex justify-between items-center`}
           >
-            {wineData.map(({ imagePath, variant, glassColor, bottleNeckColor }, index) => (
-              <img
-                src={imagePath}
-                alt={`${variant}-image`}
-                className={`vodkaPicker-transition cursor-pointer z-20 ${
-                  vodka_variant === variant ? "h-full w-auto" : "h-4/5 w-auto"
-                }`}
-                key={index}
-                onClick={() => {
-                  //so if the Bottle label is already the one in store, clicking that won't do anything
-                  if (vodka_variant === variant) return;
+            {wineData.map(
+              ({ imagePath, variant, glassColor, bottleNeckColor, headerBgColor }, index) => (
+                <img
+                  src={imagePath}
+                  alt={`${variant}-image`}
+                  className={`vodkaPicker-transition cursor-pointer z-20 ${
+                    vodka_variant === variant ? "h-full w-auto" : "h-4/5 w-auto"
+                  }`}
+                  key={index}
+                  onClick={() => {
+                    //so if the Bottle label is already the one in store, clicking that won't do anything
+                    if (vodka_variant === variant) return;
 
-                  animateToVodkaCan(canModel, glassColor, bottleNeckColor);
-                  updateVodka_variant(variant);
-                }}
-              />
-            ))}
+                    animateToVodkaCan(canModel, glassColor, bottleNeckColor);
+                    updateVodka_variant(variant);
+                    update_bgColor(newBgColor.r, newBgColor.g, newBgColor.b);
+                    update_newBgColor(headerBgColor.r, headerBgColor.g, headerBgColor.b);
+                    update_isLerpProgress(true);
+                  }}
+                />
+              )
+            )}
           </div>
         </div>
       </div>

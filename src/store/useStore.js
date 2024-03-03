@@ -5,6 +5,13 @@ import { subscribeWithSelector } from 'zustand/middleware'
 const initialState = {
     vodka_variant: 'Classic',
     canModel:null,
+    bgColor: {
+        r:0.01, g:0.0, b: 0.0
+    },
+    newBgColor: {
+        r:0.0, g:0.0, b: 0.0
+    },
+    isLerpProgress:false,
     controls:null
 }
 
@@ -24,6 +31,30 @@ export default create(subscribeWithSelector((set) => {
                 {
                    return {
                     canModel: model
+                   }
+                })
+            },
+            update_bgColor : (r,g,b) => {
+                set(() =>
+                {
+                   return {
+                    bgColor: {r:r,g:g,b:b}
+                   }
+                })
+            },
+            update_newBgColor : (r,g,b) => {
+                set(() =>
+                {
+                   return {
+                    newBgColor: {r,g,b}
+                   }
+                })
+            },
+            update_isLerpProgress : (value) => {
+                set(() =>
+                {
+                   return {
+                    isLerpProgress: value
                    }
                 })
             },

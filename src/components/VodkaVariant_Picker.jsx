@@ -4,6 +4,7 @@ import { animateToVodkaCan } from "../utils";
 
 const VodkaVariant_Picker = () => {
   const updateVodka_variant = useStore((state) => state.updateVodka_variant);
+  const update_bgColor = useStore((state) => state.update_bgColor);
 
   //////////
   const canModel = useStore((state) => state.canModel);
@@ -20,6 +21,7 @@ const VodkaVariant_Picker = () => {
               onClick={() => {
                 animateToVodkaCan(canModel);
                 updateVodka_variant(variant);
+                update_bgColor(headerBgColor);
               }}
             />
           ))}

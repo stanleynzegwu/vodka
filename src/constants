@@ -12,7 +12,10 @@ export const wineData = [
     glassColor:{ r: 0.05, g: 0.0, b: 0.0 },
     bottleNeckColor:{ r: 0.6, g: 0.0, b: 0.0 },
     desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
-    backgroundColor: '#bd9f63'
+    backgroundColor: '#bd9f63',
+    headerBgColor:{
+      r:0.01, g:0.0, b: 0.0
+    }
   },
   {
     imagePath:"./images/wineBottle.png",
@@ -20,7 +23,10 @@ export const wineData = [
     glassColor:{ r: 0.6, g: 0.5, b: 0.2 },
     bottleNeckColor:{ r: 0.6, g: 0.0, b: 0.0 },
     desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
-    backgroundColor: '#5eafd8'
+    backgroundColor: '#5eafd8',
+    headerBgColor:{
+      r:0.45, g:0.15, b: 0.0
+    }
   },
   {
     imagePath:"./images/wineBottle.png",
@@ -28,7 +34,10 @@ export const wineData = [
     glassColor:{ r: 0.4, g: 0.0, b: 0.0 },
     bottleNeckColor:{ r: 1.0, g: 1.0, b: 1.0 },
     desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
-    backgroundColor: '#de6abb'
+    backgroundColor: '#de6abb',
+    headerBgColor:{
+      r:0.15, g:0.0, b: 0.0
+    }
   },
   {
     imagePath:"./images/wineBottle.png",
@@ -36,7 +45,10 @@ export const wineData = [
     glassColor:{ r: 0.4, g: 0.2, b: 0.2 },
     bottleNeckColor:{ r: 0.0, g: 0.0, b: 0.0 },
     desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
-    backgroundColor: '#bcb4ba'
+    backgroundColor: '#bcb4ba',
+    headerBgColor:{
+      r:0.035, g:0.0, b: 0.0
+    }
   },
 ]
 
