@@ -25,7 +25,7 @@ export const wineData = [
     desc:"Awaken your tastebuds and senses with Grape Thunder, the perfect blend of sweet and tangy",
     backgroundColor: '#5eafd8',
     headerBgColor:{
-      r:0.45, g:0.15, b: 0.0
+      r:0.06, g:0.02, b: 0.0
     }
   },
   {

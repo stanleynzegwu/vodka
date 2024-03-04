@@ -23,6 +23,7 @@ void main() {
 
     // Calculate the distance from the top right corner of the screen
     vec2 distanceFromCorner = abs(vUv - vec2(0.0, 0.0));
+    //vec2 distanceFromCorner = abs(vUv - vec2(1.0, 1.0)); //the transition will start from bottom left
 
     // Calculate the maximum distance from the top right corner (diagonal distance to the corner)
     float maxDistanceFromCorner = sqrt(2.0); // Length of the diagonal from (0,0) to (1,1)
@@ -41,6 +42,7 @@ void main() {
 
     // Output the final color with the remapped uv
     gl_FragColor = vec4(mx, newUv);
+     //gl_FragColor = vec4(0.09,0.009,0.0, newUv);
     
     // Include additional shader fragments if needed
     #include <tonemapping_fragment>
