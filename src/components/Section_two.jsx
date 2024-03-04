@@ -5,7 +5,12 @@ import { animateToVodkaCan } from "../utils";
 const Section_two = () => {
   const vodka_variant = useStore((state) => state.vodka_variant);
   const updateVodka_variant = useStore((state) => state.updateVodka_variant);
+  const update_bgColor = useStore((state) => state.update_bgColor);
+  const newBgColor = useStore((state) => state.newBgColor);
+  const update_newBgColor = useStore((state) => state.update_newBgColor);
+  const update_isLerpProgress = useStore((state) => state.update_isLerpProgress);
   const canModel = useStore((state) => state.canModel);
+
   return (
     <div
       className="section_two relative max-md:px-4 max-lg:pb-10 flex justify-center lg:h-screen w-full z-20 bg-white"
@@ -13,7 +18,18 @@ const Section_two = () => {
     >
       <div className="rounded-lg flex flex-col max-lg:gap-20 max-lg:justify-between lg:flex-row lg:gap-0 lg:h-[75%] lg:w-[95%] ">
         {wineData.map(
-          ({ imagePath, variant, glassColor, bottleNeckColor, desc, backgroundColor }, index) => (
+          (
+            {
+              imagePath,
+              variant,
+              glassColor,
+              bottleNeckColor,
+              desc,
+              backgroundColor,
+              headerBgColor,
+            },
+            index
+          ) => (
             <div
               className={`relative min-h-[150px] smooth-transition rounded-lg lg:rounded-none lg:first:rounded-l-lg lg:last:rounded-r-lg flex pointer-events-auto cursor-pointer ${
                 vodka_variant === variant ? "lg:flex-4" : "lg:flex-2"
@@ -26,6 +42,9 @@ const Section_two = () => {
 
                 animateToVodkaCan(canModel, glassColor, bottleNeckColor);
                 updateVodka_variant(variant);
+                update_bgColor(newBgColor.r, newBgColor.g, newBgColor.b);
+                update_newBgColor(headerBgColor.r, headerBgColor.g, headerBgColor.b);
+                update_isLerpProgress(true);
               }}
             >
               <div
