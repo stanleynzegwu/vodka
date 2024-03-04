@@ -59,7 +59,7 @@ export const animateProgression = (propertyToAnimate, update_isLerpProgress) => 
       {
         value: 1, // Target value
         duration: .5,
-        ease: "power1.inOut",
+        ease: "linear",
         onComplete: () => {
           update_isLerpProgress(false)
         }

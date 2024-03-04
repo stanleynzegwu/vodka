@@ -1,11 +1,12 @@
 import * as THREE from "three";
-import { Plane, shaderMaterial } from "@react-three/drei";
+import { Plane, shaderMaterial, useTexture } from "@react-three/drei";
 import { useThree, extend, useFrame } from "@react-three/fiber";
 import vertexShader from "../shaders/plane.vertex.glsl";
 import fragmentShader from "../shaders/plane.fragment.glsl";
 import { useEffect, useMemo, useRef } from "react";
 import useStore from "../store/useStore";
 import { animateProgression } from "../utils";
+import { resolveLygia } from "resolve-lygia";
 
 const PlaneBackgound = () => {
   const planeShaderMaterialRef = useRef();
@@ -15,6 +16,10 @@ const PlaneBackgound = () => {
   const isLerpProgress = useStore((state) => state.isLerpProgress);
   const update_isLerpProgress = useStore((state) => state.update_isLerpProgress);
 
+  const perlinTexture = useTexture("/images/perlin.png");
+  perlinTexture.wrapS = THREE.RepeatWrapping;
+  perlinTexture.wrapT = THREE.RepeatWrapping;
+
   const PlaneShaderMaterial = shaderMaterial(
     {
       uCursor: new THREE.Vector2(0, 0),
@@ -22,9 +27,10 @@ const PlaneBackgound = () => {
       color: new THREE.Color(bgColor.r, bgColor.g, bgColor.b),
       colorB: new THREE.Color(newBgColor.r, newBgColor.g, newBgColor.b),
       uProgression: 0,
+      uPerlinTexture: perlinTexture,
     },
-    vertexShader,
-    fragmentShader
+    resolveLygia(vertexShader),
+    resolveLygia(fragmentShader)
   );
 
   // declaratively
