@@ -76,6 +76,15 @@ export const FAQ = [
   },
 ]
 
+export const pickerBgColor = (brand) => {
+  return brand === 'Classic' ? '#000000c7' 
+  :
+  brand === 'Cranberry' ? '#74740475' 
+  :
+  brand === 'Coconut & pineApple' ? '#00000070' 
+  : '#33150ea8'
+}
+
 export const FOOTER_CONTENT = [
   { title: "Our range", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
   { title: "about us", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },

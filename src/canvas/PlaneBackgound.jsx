@@ -43,10 +43,10 @@ const PlaneBackgound = () => {
 
   //   console.log(cursor);
   // });
-  window.addEventListener("mousemove", (event) => {
-    planeShaderMaterialRef.current.uniforms.uCursor.value.x = event.clientX / window.innerWidth;
-    planeShaderMaterialRef.current.uniforms.uCursor.value.y = event.clientY / window.innerHeight;
-  });
+  // window.addEventListener("mousemove", (event) => {
+  //   planeShaderMaterialRef.current.uniforms.uCursor.value.x = event.clientX / window.innerWidth;
+  //   planeShaderMaterialRef.current.uniforms.uCursor.value.y = event.clientY / window.innerHeight;
+  // });
 
   useEffect(() => {
     if (isLerpProgress) {

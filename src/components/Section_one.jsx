@@ -7,6 +7,7 @@ import { animateToVodkaCan } from "../utils";
 import PlaneBackgound from "../canvas/PlaneBackgound";
 import { wineData } from "../constants";
 import { Grape, Strawberry } from "./svg";
+import { pickerBgColor } from "../constants";
 
 const Section_one = () => {
   const vodka_variant = useStore((state) => state.vodka_variant);
@@ -50,7 +51,10 @@ const Section_one = () => {
         </div>
       </div>
       {/* <VodkaVariant_picker /> */}
-      <div className="vodkaVariant_picker fixed max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2 bottom-0 right-10 bg-blue-200 w-[250px] max-w-10 rounded-t-3xl z-20">
+      <div
+        className={`transition-pickerBgColor vodkaVariant_picker fixed max-lg:left-1/2 max-lg:transform max-lg:-translate-x-1/2 bottom-0 right-10 w-[250px] max-w-10 rounded-t-3xl z-20 `}
+        style={{ backgroundColor: pickerBgColor(vodka_variant) }}
+      >
         <div className="relative w-full h-20 rounded-t-3xl">
           <div
             className={`absolute top-[-30px] left-0 bg-transparent w-full h-28 flex justify-between items-center`}
