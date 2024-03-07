@@ -22,24 +22,19 @@ export const animateToVodkaCan = (model,glassColor,bottleNeckColor) => {
   const timeline = gsap.timeline();
 
   timeline
-  //rotation
+  /*** rotation ***/
   .to(model.rotation, {
     y: model.rotation.y + Math.PI * 4,
     duration: 1,
-    ease: "easeIn",
+    ease: "linear",
   },'same')
-  //slightly move the position then return back
+  /*** slightly move the position then return back ***/
     .to(model.position, {
-    x: model.position.x - 0.05,
+    x: "-=0.05",
     duration: 0.5,
     ease: "linear",
   },'same')
-    .to(model.position, {
-    x: model.position.x + 0.05,
-    duration: 0.5,
-    ease: "linear",
-  },)
-  //
+  /** */
     .to(model?.getObjectByName("bottle_other").material, {
     color: glassColor,
     duration: 0,
@@ -50,14 +45,20 @@ export const animateToVodkaCan = (model,glassColor,bottleNeckColor) => {
     duration: 0,
     ease: "linear",
   },'same')
+  /** move it back to it's initial position on the x-axis */
+  .to(model.position, {
+    x: "+=0.05",
+    duration: 0.5,
+    ease: "linear",
+  },)
 };
 
 export const animateProgression = (propertyToAnimate, update_isLerpProgress) => {
     gsap.timeline().fromTo(
       propertyToAnimate,
-      { value: 0 }, // Initial value
+      { value: 0 }, /**  Initial value */
       {
-        value: 1, // Target value
+        value: 1, /** Target value */
         duration: .5,
         ease: "linear",
         onComplete: () => {
