@@ -21,6 +21,11 @@ const Section_one = () => {
   const canModel = useStore((state) => state.canModel);
   // console.log(canModel?.getObjectByName("bottle_other").material.color);
   // const apparelSelected = useMemo(() => apparelConfig.find((item) => item.name === apparelType), [canModel]);
+
+  const getColor = (brand) => {
+    return wineData.find(({ variant }) => variant === brand).backgroundColor;
+  };
+
   return (
     <div className="relative h-[200vh] w-full" id="section_one">
       <div className="relative h-[100vh] w-full " id="planeDiv">
@@ -41,10 +46,21 @@ const Section_one = () => {
       </div>
       <div className="px-4 flex flex-col justify-center items-center w-full h-[100vh]">
         <div className="flex flex-col gap-12 items-center">
-          <h2 className="font-bold text-2xl md:text-4xl lg:text-5xl text-center">
+          <h2
+            className={`font-bold text-2xl md:text-4xl lg:text-5xl text-center`}
+            style={{ color: getColor(vodka_variant) }}
+          >
             4 refreshing flavored wine <br />
             drink to choose from
           </h2>
+          <div className="lg:hidden">
+            Fuel your day with STAN Wine! Packed with <br /> natural caffiene and Taurine for a
+            voost of
+            <br />
+            energy and Vitamin B cpmplex for sharp focus,
+            <br />
+            our drinks got you covered.
+          </div>
           <button className="capitalize bg-red-300 rounded-full px-4 py-2 font-bold text-md z-20">
             shop all
           </button>
@@ -84,6 +100,12 @@ const Section_one = () => {
           </div>
         </div>
       </div>
+      {/* <h2 className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white opacity-[4.5px] font-extrabold text-[100px] leading-none">
+        STAN WINE
+      </h2>
+      <h2 className="font-outline-1 absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-transparent font-extrabold text-[100px] z-50 leading-none ">
+        STAN WINE{" "}
+      </h2> */}
     </div>
   );
 };

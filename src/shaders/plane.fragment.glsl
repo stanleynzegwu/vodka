@@ -42,7 +42,19 @@ void main() {
 
     // Output the final color with the remapped uv
     gl_FragColor = vec4(mx, newUv);
-     //gl_FragColor = vec4(0.09,0.009,0.0, newUv);
+    
+         // Define your two colors
+    // vec3 colorA = vec3(0.1, 0.0, 0.0);  // Red color
+    // vec3 colorB = vec3(0.007, 0.0, 0.0);  // Black color
+
+    // // Calculate the interpolation factor based on uv.y
+    // float t = smoothstep(0.0, 0.8, vUv.y);
+
+    // // Interpolate between colorA and colorB using the interpolation factor
+    // vec3 interpolatedColor = mix(colorA, colorB, t);
+
+    // // Output the interpolated color
+    // gl_FragColor = vec4(interpolatedColor, 1.0);
     
     // Include additional shader fragments if needed
     #include <tonemapping_fragment>

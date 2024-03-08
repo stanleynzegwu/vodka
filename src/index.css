@@ -3,6 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 1px rgb(141, 140, 140);
+  }
+  .font-outline-4 {
+    -webkit-text-stroke: 4px black;
+  }
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
