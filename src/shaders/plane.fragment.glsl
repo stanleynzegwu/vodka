@@ -9,6 +9,7 @@ varying vec3 vNormal;
 varying vec3 vPosition;
 
 #include ./includes/pointLight.glsl
+#include ./includes/directionalLight.glsl
 
 void main() {
     vec3 normal = normalize(vNormal);
@@ -17,16 +18,25 @@ void main() {
     /*********** LIGHT ***************/
     vec3 light = vec3(0.0);
 
-        light += pointLight(
+    light += directionalLight(
         vec3(1.0, 1.0, 1.0), // Light color
-        0.025,                 // Light intensity,
+        0.01,                 // Light intensity,
         normal,              // Normal
         vec3(uCursor.x, uCursor.y, 2.0), // Light position
         viewDirection,       // View direction
-        20.0,                // Specular power
-        vPosition,           // Position
-        0.25                // Light decay
+        10.0                 // Specular power
     );
+
+    //     light += pointLight(
+    //     vec3(1.0, 1.0, 1.0), // Light color
+    //     0.025,                 // Light intensity,
+    //     normal,              // Normal
+    //     vec3(uCursor.x, uCursor.y, 2.0), // Light position
+    //     viewDirection,       // View direction
+    //     20.0,                // Specular power
+    //     vPosition,           // Position
+    //     0.25                // Light decay
+    // );
     
     /*********** BACKGROUND TRANSITION ***************/
 
