@@ -10,7 +10,7 @@ import { resolveLygia } from "resolve-lygia";
 
 const PlaneBackgound = () => {
   const planeShaderMaterialRef = useRef();
-  const { viewport } = useThree();
+  const { viewport, ...others } = useThree();
   const bgColor = useStore((state) => state.bgColor);
   const newBgColor = useStore((state) => state.newBgColor);
   const isLerpProgress = useStore((state) => state.isLerpProgress);
@@ -36,17 +36,20 @@ const PlaneBackgound = () => {
   // declaratively
   extend({ PlaneShaderMaterial });
 
-  let cursor = { x: 0, y: 0 };
-  // window.addEventListener("mousemove", (event) => {
-  //   cursor.x = event.clientX / window.innerWidth;
-  //   cursor.y = event.clientY / window.innerHeight;
+  const cursor = { x: 0, y: 0 };
 
-  //   console.log(cursor);
-  // });
-  // window.addEventListener("mousemove", (event) => {
-  //   planeShaderMaterialRef.current.uniforms.uCursor.value.x = event.clientX / window.innerWidth;
-  //   planeShaderMaterialRef.current.uniforms.uCursor.value.y = event.clientY / window.innerHeight;
-  // });
+  window.addEventListener("mousemove", (event) => {
+    cursor.x = (event.clientX / window.innerWidth) * 2 - 1;
+    cursor.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    //adapt to width and height
+    let adaptX = (cursor.x * viewport.width) / 2;
+    let adaptY = (cursor.y * viewport.height) / 2;
+
+    planeShaderMaterialRef.current.uniforms.uCursor.value.x = adaptX;
+    planeShaderMaterialRef.current.uniforms.uCursor.value.y = adaptY;
+    // console.log(viewport.width * planeShaderMaterialRef.current.uniforms.uCursor.value.x);
+  });
 
   useEffect(() => {
     if (isLerpProgress) {

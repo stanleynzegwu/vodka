@@ -1,23 +1,35 @@
 uniform float time;
+uniform vec2 uCursor;
 uniform vec3 color;
 uniform vec3 colorB;
 uniform float uProgression;
 uniform sampler2D uPerlinTexture;
 varying vec2 vUv;
+varying vec3 vNormal;
+varying vec3 vPosition;
 
-// void main() {
-//     //remap uv to now go from 0.4 => 1.0
-//     float newUv = mix(0.4, 1.0, vUv.y);
-//     float invertedProgression = 1.0 - uProgression;
-//     // vec3 mx = mix(color, colorB, step(invertedProgression, vUv.x));
-//     // vec4 perlin = texture2D(uPerlinTexture,vUv);
-//     vec3 mx = mix(color, colorB, step(invertedProgression, vUv.x));
-//     gl_FragColor = vec4(mx, newUv);
-//     #include <tonemapping_fragment>
-//     #include <colorspace_fragment>
-// }
+#include ./includes/pointLight.glsl
 
 void main() {
+    vec3 normal = normalize(vNormal);
+    vec3 viewDirection = normalize(vPosition - cameraPosition);
+
+    /*********** LIGHT ***************/
+    vec3 light = vec3(0.0);
+
+        light += pointLight(
+        vec3(1.0, 1.0, 1.0), // Light color
+        0.025,                 // Light intensity,
+        normal,              // Normal
+        vec3(uCursor.x, uCursor.y, 2.0), // Light position
+        viewDirection,       // View direction
+        20.0,                // Specular power
+        vPosition,           // Position
+        0.25                // Light decay
+    );
+    
+    /*********** BACKGROUND TRANSITION ***************/
+
     // Remap uv to now go from 0.4 => 1.0
     float newUv = mix(0.4, 1.0, vUv.y);
 
@@ -40,8 +52,10 @@ void main() {
     // Mix the colors based on the alpha value
     vec3 mx = mix(color, colorB, alpha);
 
+    /*********** FINAL COLOR ***************/
+
     // Output the final color with the remapped uv
-    gl_FragColor = vec4(mx, newUv);
+    gl_FragColor = vec4(mx + light, newUv);
     
          // Define your two colors
     // vec3 colorA = vec3(0.1, 0.0, 0.0);  // Red color
