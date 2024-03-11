@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <div className={`relative lg:h-screen w-full px-4 py-6 flex flex-col bg-gray-100 z-20`}>
+    <div className={`relative lg:h-screen w-full px-4 py-6 flex flex-col bg-gray-100 z-20 pt-20`}>
       <div className="h-[95%] py-10 max-lg:w-full flex flex-col lg:flex-row justify-between lg:items-center max-lg:gap-6">
         <div className="h-full">
           <div className="max-lg:text-center">
