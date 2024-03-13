@@ -43,6 +43,14 @@ body, */
   -ms-touch-action: auto !important;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: rgb(114, 103, 103);
+}
+
 .main {
   width: 100%;
   height: 100%;
