@@ -98,7 +98,7 @@ const Section_one = () => {
       <h2 className=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white opacity-[0.03] font-extrabold text-[100px] leading-none">
         STAN WINE
       </h2>
-      <h2 className="font-outline-1 absolute opacity-[0.4] top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-transparent font-extrabold text-[100px] z-50 leading-none ">
+      <h2 className="font-outline-1 absolute opacity-[0.4] top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-transparent font-extrabold text-[100px] z-40 leading-none ">
         STAN WINE{" "}
       </h2>
     </div>
