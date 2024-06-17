@@ -1,6 +1,7 @@
 import * as React from "react";
 const Strawberry = (props) => {
-  const marginLeft = window.innerWidth / 2 + 250 + "px";
+  const mobile = 1024;
+  const marginLeft = window.innerWidth / 2 + 150 + "px";
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,8 +9,8 @@ const Strawberry = (props) => {
       xmlSpace="preserve"
       //   width={256}
       //   height={256}
-      className={`floatingSvg_animation w-40 h-40`}
-      style={{ marginLeft: marginLeft }}
+      className={`floatingSvg_animation absolute w-28 h-28 md:w-40 md:h-40 top-[25%] right-[5%] md:right-[15%] lg:right-[20%]`}
+      // style={{ marginLeft: marginLeft }}
       {...props}
     >
       <path

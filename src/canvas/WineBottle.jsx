@@ -10,7 +10,6 @@ import { useControls } from "leva";
 
 export function WineBottle(props) {
   const { nodes, materials } = useGLTF("/models/wineBottle1.glb");
-
   const rationScale = Math.min(1.2, Math.max(0.5, window.innerWidth / 1280));
   const groupRef = useRef();
   const vodka_variant = useStore((state) => state.vodka_variant);

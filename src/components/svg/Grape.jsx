@@ -10,8 +10,8 @@ const Grape = () => {
       fill="#4B0082"
       stroke="#4B0082"
       transform="matrix(-1, 0, 0, 1, 0, 0)"
-      className={`floatingSvg_animation w-40 h-40`}
-      style={{ marginLeft: marginLeft }}
+      className={`floatingSvg_animation absolute w-28 h-28 md:w-40 md:h-40 top-[10%] left-[5%] md:left-[20%] `}
+      // style={{ marginLeft: marginLeft }}
     >
       <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
       <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>

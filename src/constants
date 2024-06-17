@@ -86,9 +86,9 @@ export const pickerBgColor = (brand) => {
 }
 
 export const FOOTER_CONTENT = [
-  { title: "Our range", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
-  { title: "about us", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
-  { title: "support", list: ["Berry", "oat slice", "protein mofeim", "cookies","cookies","cookies","cookies"] },
+  { title: "Our range", list: ["Berry", "Vodka", "Champaign", "Coconut Raver","Hot-Tapper","Fluid Wine","Lasagna"] },
+  { title: "about us", list: ["Home", "About", "Subscribe", "Verify","Vodka Plans","Wine Plans","Blog"] },
+  { title: "support", list: ["Contact Us", "Faqs", "Delivery", "Disclaimer","Privacy","Terms","Returns"] },
 ]
 
 export const pp = [

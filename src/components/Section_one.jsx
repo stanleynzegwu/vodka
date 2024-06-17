@@ -17,10 +17,7 @@ const Section_one = () => {
   const update_newBgColor = useStore((state) => state.update_newBgColor);
   const update_isLerpProgress = useStore((state) => state.update_isLerpProgress);
 
-  //////////
   const canModel = useStore((state) => state.canModel);
-  // console.log(canModel?.getObjectByName("bottle_other").material.color);
-  // const apparelSelected = useMemo(() => apparelConfig.find((item) => item.name === apparelType), [canModel]);
 
   const getColor = (brand) => {
     return wineData.find(({ variant }) => variant === brand).backgroundColor;
@@ -33,14 +30,12 @@ const Section_one = () => {
           <PlaneBackgound />
         </Scene>
       </div>
-      {/* <div className="absolute w-full h-full top-0 left-0">
-        <Grape />
-        <Strawberry />
-      </div> */}
-      <div className="absolute top-80 left-20 text-white text-lg z-20 max-lg:hidden">
-        Fuel your day with STAN Wine! Packed with <br /> natural caffiene and Taurine for a voost of
+      <Grape />
+      <Strawberry />
+      <div className="font-dancingScript font-bold absolute top-80 left-20 text-white text-2xl z-20 max-lg:hidden">
+        Fuel your day with STAN Wine! Packed with <br /> natural caffiene and Taurine for a boost of
         <br />
-        energy and Vitamin B cpmplex for sharp focus,
+        energy and Vitamin B complex for sharp focus,
         <br />
         our drinks got you covered.
       </div>
@@ -100,12 +95,12 @@ const Section_one = () => {
           </div>
         </div>
       </div>
-      {/* <h2 className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white opacity-[4.5px] font-extrabold text-[100px] leading-none">
+      <h2 className=" absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-white opacity-[0.03] font-extrabold text-[100px] leading-none">
         STAN WINE
       </h2>
-      <h2 className="font-outline-1 absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-transparent font-extrabold text-[100px] z-50 leading-none ">
+      <h2 className="font-outline-1 absolute opacity-[0.4] top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/4 text-transparent font-extrabold text-[100px] z-50 leading-none ">
         STAN WINE{" "}
-      </h2> */}
+      </h2>
     </div>
   );
 };
